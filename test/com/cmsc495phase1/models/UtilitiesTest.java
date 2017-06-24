@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Joe
+ * Copyright (C) 2017 Joe Green at jgreen123 (GitHub)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,70 +16,97 @@
  */
 package com.cmsc495phase1.models;
 
-import java.sql.Connection;
-import javax.servlet.http.HttpServletRequest;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
  *
- * @author Joe
+ * @author Joe Green
  */
 public class UtilitiesTest {
-    
-    public UtilitiesTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
 
     /**
-     * Test of isMobile method, of class Utilities.
+     * Test of isMobile method, of class Utilities. wip
      */
-    @Test
-    public void testIsMobile() {
-        System.out.println("isMobile");
-        HttpServletRequest request = null;
-        Boolean expResult = null;
-        Boolean result = Utilities.isMobile(request);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
+//    @Test
+//    public void testIsMobile() {
+//        HttpServletRequest request = null;
+//        request.getHeader(name)
+//        Boolean expResult = null;
+//        Boolean result = Utilities.isMobile(request);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
     /**
      * Test of getPattern method, of class Utilities.
      */
     @Test
     public void testGetPattern() {
-        System.out.println("getPattern");
-        int keypadLetterGroup = 0;
-        String expResult = "";
-        String result = Utilities.getPattern(keypadLetterGroup);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int keypadLetterGroup;
+
+        keypadLetterGroup = 0;
+        String patternResult = Utilities.getPattern(keypadLetterGroup);
+
+        String expResult = "^[A-Za-z]";
+        assertEquals(expResult, patternResult);
+
+        keypadLetterGroup = 1;
+        patternResult = Utilities.getPattern(keypadLetterGroup);
+
+        expResult = "^[A-Ca-c]";
+        assertEquals(expResult, patternResult);
+
+        keypadLetterGroup = 2;
+        patternResult = Utilities.getPattern(keypadLetterGroup);
+        expResult = "^[D-Fd-f]";
+        assertEquals(expResult, patternResult);
+
+        keypadLetterGroup = 3;
+        patternResult = Utilities.getPattern(keypadLetterGroup);
+        expResult = "^[G-Ig-i]";
+        assertEquals(expResult, patternResult);
+
+        keypadLetterGroup = 4;
+        patternResult = Utilities.getPattern(keypadLetterGroup);
+        expResult = "^[J-Lj-l]";
+        assertEquals(expResult, patternResult);
+
+        keypadLetterGroup = 5;
+        patternResult = Utilities.getPattern(keypadLetterGroup);
+        expResult = "^[M-Om-o]";
+        assertEquals(expResult, patternResult);
+
+        keypadLetterGroup = 6;
+        patternResult = Utilities.getPattern(keypadLetterGroup);
+        expResult = "^[P-Rp-r]";
+        assertEquals(expResult, patternResult);
+
+        keypadLetterGroup = 7;
+        patternResult = Utilities.getPattern(keypadLetterGroup);
+        expResult = "^[S-Us-u]";
+        assertEquals(expResult, patternResult);
+
+        keypadLetterGroup = 8;
+        patternResult = Utilities.getPattern(keypadLetterGroup);
+        expResult = "^[V-Xv-x]";
+        assertEquals(expResult, patternResult);
+
+        keypadLetterGroup = 9;
+        patternResult = Utilities.getPattern(keypadLetterGroup);
+        expResult = "^[Y-Zy-z]";
+        assertEquals(expResult, patternResult);
     }
 
     /**
-     * Test of connectToDatabase method, of class Utilities.
+     * Test of connectToDatabase method, of class Utilities. wip
      */
-    @Test
-    public void testConnectToDatabase() {
-        System.out.println("connectToDatabase");
-        String dbName = "";
-        Connection expResult = null;
-        Connection result = Utilities.connectToDatabase(dbName);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
+//    @Test
+//    public void testConnectToDatabase() {
+//        String dbName = "medications.db";
+//        Connection expResult = null;
+//        Connection result = Utilities.connectToDatabase(dbName);
+//        assertEquals(expResult, result);
+//
+//    }
 }
